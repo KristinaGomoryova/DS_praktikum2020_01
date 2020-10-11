@@ -154,3 +154,9 @@ data %>%
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
   labs(title = 'Lot area vs dwelling types',
        y='LotArea (square feet) ',x='Dwelling type')
+
+# density of LotArea
+ggplot(data, aes(x=LotArea)) + 
+  geom_density(color="darkblue", fill="lightblue")+
+  geom_vline(aes(xintercept=mean(LotArea)),
+             color="blue", linetype="dashed", size=1)
